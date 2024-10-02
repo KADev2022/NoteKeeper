@@ -25,7 +25,7 @@ public class Frame {
 		frame = new JFrame("Note Keeper");
 		
 		// Set the size of the frame
-		frame.setSize(1280, 720);
+		frame.setSize(650, 650);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
