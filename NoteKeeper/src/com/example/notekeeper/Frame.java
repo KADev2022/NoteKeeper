@@ -2,6 +2,9 @@ package com.example.notekeeper;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -12,6 +15,7 @@ public class Frame {
 	public static void main(String[] args) {
 		createFrame();
 		createTextArea();
+		createMenu();
 		
 		// Make the frame visible
 		frame.setVisible(true);
@@ -42,5 +46,59 @@ public class Frame {
 		scrollBar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollBar.setBorder(BorderFactory.createEmptyBorder());
 		frame.add(scrollBar);
+	}
+	
+	/**
+	 * Function to create the menu bar and menu items
+	 */
+	public static void createMenu() {
+		// Create the menu bar and set it to the frame
+		JMenuBar menu = new JMenuBar();
+		frame.setJMenuBar(menu);
+		
+		/*
+		 * Create 3 Menus
+		 * 
+		 * 1) File Menu
+		 * 2) Edit Menu
+		 * 3) Format Menu
+		 */
+		
+		// File Menu
+		JMenu fileMenu = new JMenu("File");
+		menu.add(fileMenu);
+		
+		// Edit Menu
+		JMenu editMenu = new JMenu("Edit");
+		menu.add(editMenu);
+		
+		// Format Menu
+		JMenu formatMenu = new JMenu("Format");
+		menu.add(formatMenu);
+		
+		/*
+		 * Create 4 File Menu Items
+		 * 
+		 * 1) New Item
+		 * 2) Open Item
+		 * 3) Save Item
+		 * 4) Save As Item
+		 */
+		
+		// New Item
+		JMenuItem newItem = new JMenuItem("New");
+		fileMenu.add(newItem);
+		
+		// Open Item
+		JMenuItem openItem = new JMenuItem("Open");
+		fileMenu.add(openItem);
+		
+		// Save Item
+		JMenuItem saveItem = new JMenuItem("Save");
+		fileMenu.add(saveItem);
+		
+		// Save As Item
+		JMenuItem saveAsItem = new JMenuItem("Save As...");
+		fileMenu.add(saveAsItem);
 	}
 }
