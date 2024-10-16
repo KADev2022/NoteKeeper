@@ -94,6 +94,7 @@ public class Frame {
 		
 		// Open Item
 		JMenuItem openItem = new JMenuItem("Open");
+		openItem.addActionListener(e -> FileMenu.openFile());
 		fileMenu.add(openItem);
 		
 		// Save Item
