@@ -8,6 +8,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import com.example.notekeeper.menu.FileMenu;
+
 public class Frame {
 	public static JFrame frame;
 	public static JTextArea textArea;
@@ -87,6 +89,7 @@ public class Frame {
 		
 		// New Item
 		JMenuItem newItem = new JMenuItem("New");
+		newItem.addActionListener(e -> FileMenu.newFile());
 		fileMenu.add(newItem);
 		
 		// Open Item
