@@ -99,10 +99,12 @@ public class Frame {
 		
 		// Save Item
 		JMenuItem saveItem = new JMenuItem("Save");
+		saveItem.addActionListener(e -> FileMenu.saveFile());
 		fileMenu.add(saveItem);
 		
 		// Save As Item
 		JMenuItem saveAsItem = new JMenuItem("Save As...");
+		saveAsItem.addActionListener(e -> FileMenu.saveAsFile());
 		fileMenu.add(saveAsItem);
 	}
 }
