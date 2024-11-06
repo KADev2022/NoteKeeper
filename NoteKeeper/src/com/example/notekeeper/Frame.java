@@ -8,6 +8,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import com.example.notekeeper.menu.EditMenu;
 import com.example.notekeeper.menu.FileMenu;
 
 public class Frame {
@@ -106,5 +107,34 @@ public class Frame {
 		JMenuItem saveAsItem = new JMenuItem("Save As...");
 		saveAsItem.addActionListener(e -> FileMenu.saveAsFile());
 		fileMenu.add(saveAsItem);
+		
+		/*
+		 * Create 4 Edit Menu Items
+		 * 
+		 * 1) Cut Item
+		 * 2) Copy Item
+		 * 3) Paste Item
+		 * 4) Select All Item
+		 */
+		
+		// Cut Item
+		JMenuItem cutItem = new JMenuItem("Cut");
+		cutItem.addActionListener(e -> EditMenu.cut());
+		editMenu.add(cutItem);
+		
+		// Copy Item
+		JMenuItem copyItem = new JMenuItem("Copy");
+		copyItem.addActionListener(e -> EditMenu.copy());
+		editMenu.add(copyItem);
+		
+		// Paste Item
+		JMenuItem pasteItem = new JMenuItem("Paste");
+		pasteItem.addActionListener(e -> EditMenu.paste());
+		editMenu.add(pasteItem);
+		
+		// Select All Item
+		JMenuItem selectItem = new JMenuItem("Select All");
+		selectItem.addActionListener(e -> EditMenu.selectAll());
+		editMenu.add(selectItem);
 	}
 }
