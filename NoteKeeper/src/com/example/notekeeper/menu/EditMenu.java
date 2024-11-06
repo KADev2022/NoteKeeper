@@ -3,7 +3,6 @@ package com.example.notekeeper.menu;
 import com.example.notekeeper.Frame;
 
 public class EditMenu {
-	
 	/**
 	 * Function to cut content using the "Cut" option
 	 */
