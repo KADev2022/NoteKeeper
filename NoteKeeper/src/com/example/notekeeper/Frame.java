@@ -10,6 +10,7 @@ import javax.swing.JTextArea;
 
 import com.example.notekeeper.menu.EditMenu;
 import com.example.notekeeper.menu.FileMenu;
+import com.example.notekeeper.menu.FormatMenu;
 
 public class Frame {
 	public static JFrame frame;
@@ -136,5 +137,28 @@ public class Frame {
 		JMenuItem selectItem = new JMenuItem("Select All");
 		selectItem.addActionListener(e -> EditMenu.selectAll());
 		editMenu.add(selectItem);
+		
+		/*
+		 * Create 3 Format Menu Items
+		 * 
+		 * 1) Bold Item
+		 * 2) Italic Item
+		 * 3) Font Color Item
+		 */
+		
+		// Bold Item
+		JMenuItem boldItem = new JMenuItem("Bold");
+		boldItem.addActionListener(e -> FormatMenu.bold());
+		formatMenu.add(boldItem);
+		
+		// Italic Item
+		JMenuItem italicItem = new JMenuItem("Italic");
+		italicItem.addActionListener(e -> FormatMenu.italic());
+		formatMenu.add(italicItem);
+		
+		// Font Color Item
+		JMenuItem fontColorItem = new JMenuItem("Font Color");
+		fontColorItem.addActionListener(e -> FormatMenu.fontColor());
+		formatMenu.add(fontColorItem);
 	}
 }
