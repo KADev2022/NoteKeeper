@@ -1,12 +1,17 @@
 package com.example.notekeeper;
 
+import java.awt.event.KeyEvent;
+
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.KeyStroke;
+import javax.swing.event.MenuKeyEvent;
 
 import com.example.notekeeper.menu.EditMenu;
 import com.example.notekeeper.menu.FileMenu;
@@ -35,6 +40,10 @@ public class Frame {
 		// Set the size of the frame
 		frame.setSize(650, 650);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		// Set the icon for the frame
+		ImageIcon icon = new ImageIcon("images/notekeeper-icon.png");
+		frame.setIconImage(icon.getImage());
 	}
 	
 	/**
@@ -93,21 +102,25 @@ public class Frame {
 		JMenuItem newItem = new JMenuItem("New");
 		newItem.addActionListener(e -> FileMenu.newFile());
 		fileMenu.add(newItem);
+		newItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK));
 		
 		// Open Item
 		JMenuItem openItem = new JMenuItem("Open");
 		openItem.addActionListener(e -> FileMenu.openFile());
 		fileMenu.add(openItem);
+		openItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_DOWN_MASK));
 		
 		// Save Item
 		JMenuItem saveItem = new JMenuItem("Save");
 		saveItem.addActionListener(e -> FileMenu.saveFile());
 		fileMenu.add(saveItem);
+		saveItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK));
 		
 		// Save As Item
 		JMenuItem saveAsItem = new JMenuItem("Save As...");
 		saveAsItem.addActionListener(e -> FileMenu.saveAsFile());
 		fileMenu.add(saveAsItem);
+		saveAsItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK));
 		
 		/*
 		 * Create 4 Edit Menu Items
@@ -122,21 +135,25 @@ public class Frame {
 		JMenuItem cutItem = new JMenuItem("Cut");
 		cutItem.addActionListener(e -> EditMenu.cut());
 		editMenu.add(cutItem);
+		cutItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, KeyEvent.CTRL_DOWN_MASK));
 		
 		// Copy Item
 		JMenuItem copyItem = new JMenuItem("Copy");
 		copyItem.addActionListener(e -> EditMenu.copy());
 		editMenu.add(copyItem);
+		copyItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_DOWN_MASK));
 		
 		// Paste Item
 		JMenuItem pasteItem = new JMenuItem("Paste");
 		pasteItem.addActionListener(e -> EditMenu.paste());
 		editMenu.add(pasteItem);
+		pasteItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, KeyEvent.CTRL_DOWN_MASK));
 		
 		// Select All Item
 		JMenuItem selectItem = new JMenuItem("Select All");
 		selectItem.addActionListener(e -> EditMenu.selectAll());
 		editMenu.add(selectItem);
+		selectItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, KeyEvent.CTRL_DOWN_MASK));
 		
 		/*
 		 * Create 3 Format Menu Items
